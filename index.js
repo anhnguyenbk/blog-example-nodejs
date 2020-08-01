@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   password : '111111',
   database : 'blog'
 });
-
+connection.connect();
 
 const app = express()
 const port = 3000
@@ -16,7 +16,6 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req, res) => {
-    connection.connect();
 
     connection.query('SELECT * from posts', function (error, results, fields) {
         if (error) throw error;
@@ -26,7 +25,17 @@ app.get('/', (req, res) => {
         });
     });
 
-    connection.end();
+});
+
+app.get('/:postId', (req, res) => {
+    var id = req.params.postId;
+    connection.query('SELECT * from posts where id = ' + id, function (error, results, fields) {
+        if (error) throw error;
+        
+        res.render('post', {
+            post: results[0]
+        });
+    });
 });
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
