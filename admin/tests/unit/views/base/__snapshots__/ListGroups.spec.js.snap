@@ -17,187 +17,6 @@ exports[`ListGroups.vue renders correctly 1`] = `
           />
            
           <strong>
-             Bootstrap list group 
-          </strong>
-           
-          <div
-            class="card-header-actions"
-          >
-            <a
-              class="card-header-action"
-              href="https://coreui.io/vue/docs/components/list-group"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              <small
-                class="text-muted"
-              >
-                docs
-              </small>
-            </a>
-          </div>
-        </ccardheader-stub>
-         
-        <ccardbody-stub>
-          <clistgroup-stub
-            tag="ul"
-          >
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Cras justo odio
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Dapibus ac facilisis in
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Morbi leo risus
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Porta ac consectetur ac
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Vestibulum at eros
-            </clistgroupitem-stub>
-          </clistgroup-stub>
-        </ccardbody-stub>
-      </ccard-stub>
-    </ccol-stub>
-     
-    <ccol-stub
-      md="6"
-      tag="div"
-    >
-      <ccard-stub>
-        <ccardheader-stub>
-          <cicon-stub
-            name="cil-justify-center"
-          />
-          <strong>
-             List group 
-          </strong>
-          <small>
-            active items
-          </small>
-        </ccardheader-stub>
-         
-        <ccardbody-stub>
-          <clistgroup-stub
-            tag="ul"
-          >
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Cras justo odio
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              active="true"
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Dapibus ac facilisis in
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Morbi leo risus
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Porta ac consectetur ac
-            </clistgroupitem-stub>
-             
-            <clistgroupitem-stub
-              activeclass="active"
-              event="click"
-              exactactiveclass="active"
-              routertag="a"
-              tag="li"
-              target="_self"
-            >
-              Vestibulum at eros
-            </clistgroupitem-stub>
-          </clistgroup-stub>
-        </ccardbody-stub>
-      </ccard-stub>
-    </ccol-stub>
-  </crow-stub>
-   
-  <crow-stub
-    gutters="true"
-    tag="div"
-  >
-    <ccol-stub
-      md="6"
-      tag="div"
-    >
-      <ccard-stub>
-        <ccardheader-stub>
-          <cicon-stub
-            name="cil-justify-center"
-          />
-           
-          <strong>
              List group 
           </strong>
            
@@ -211,10 +30,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             tag="ul"
           >
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               disabled="true"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -223,9 +42,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -234,9 +53,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -244,11 +63,13 @@ exports[`ListGroups.vue renders correctly 1`] = `
               Morbi leo risus
             </clistgroupitem-stub>
              
+            <clistgroupitemdivider-stub />
+             
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               disabled="true"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -257,9 +78,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -295,9 +116,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             tag="ul"
           >
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#some-link"
               routertag="a"
               tag="li"
@@ -308,9 +129,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
              
             <clistgroupitem-stub
               active="true"
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -320,9 +141,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -332,10 +153,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               disabled="true"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#foobar"
               routertag="a"
               tag="li"
@@ -377,9 +198,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             tag="ul"
           >
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="button"
               target="_self"
@@ -388,9 +209,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="button"
               target="_self"
@@ -399,10 +220,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               disabled="true"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="button"
               target="_self"
@@ -411,9 +232,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="button"
               target="_self"
@@ -449,10 +270,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             tag="ul"
           >
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               class="d-flex justify-content-between align-items-center"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -461,10 +282,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
               Cras justo odio
               
               <cbadge-stub
-                activeclass="active"
+                activeclass="router-link-active"
                 color="primary"
                 event="click"
-                exactactiveclass="active"
+                exactactiveclass="router-link-exact-active"
                 routertag="a"
                 shape="pill"
                 tag="span"
@@ -475,10 +296,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               class="d-flex justify-content-between align-items-center"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -487,10 +308,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
               Dapibus ac facilisis in
               
               <cbadge-stub
-                activeclass="active"
+                activeclass="router-link-active"
                 color="primary"
                 event="click"
-                exactactiveclass="active"
+                exactactiveclass="router-link-exact-active"
                 routertag="a"
                 shape="pill"
                 tag="span"
@@ -501,10 +322,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               class="d-flex justify-content-between align-items-center"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -513,10 +334,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
               Morbi leo risus
               
               <cbadge-stub
-                activeclass="active"
+                activeclass="router-link-active"
                 color="primary"
                 event="click"
-                exactactiveclass="active"
+                exactactiveclass="router-link-exact-active"
                 routertag="a"
                 shape="pill"
                 tag="span"
@@ -559,9 +380,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
             tag="ul"
           >
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -570,10 +391,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="primary"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -582,10 +403,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="secondary"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -594,10 +415,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="success"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -606,10 +427,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="danger"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -618,10 +439,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="warning"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -630,10 +451,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="info"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -642,10 +463,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="light"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -654,10 +475,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               color="dark"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               routertag="a"
               tag="li"
               target="_self"
@@ -684,18 +505,20 @@ exports[`ListGroups.vue renders correctly 1`] = `
           </strong>
            
           <small>
-            colors active
+            colors active accent
           </small>
         </ccardheader-stub>
          
         <ccardbody-stub>
           <clistgroup-stub
+            accent="true"
             tag="ul"
           >
             <clistgroupitem-stub
-              activeclass="active"
+              accent="light"
+              activeclass="router-link-active"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -705,10 +528,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="primary"
+              activeclass="router-link-active"
               color="primary"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -718,10 +542,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="secondary"
+              activeclass="router-link-active"
               color="secondary"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -731,10 +556,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="success"
+              activeclass="router-link-active"
               color="success"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -744,10 +570,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="danger"
+              activeclass="router-link-active"
               color="danger"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -757,10 +584,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="warning"
+              activeclass="router-link-active"
               color="warning"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -770,10 +598,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="info"
+              activeclass="router-link-active"
               color="info"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -783,10 +612,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="light"
+              activeclass="router-link-active"
               color="light"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -796,10 +626,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              accent="dark"
+              activeclass="router-link-active"
               color="dark"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -853,9 +684,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
                   tag="ul"
                 >
                   <clistgroupitem-stub
-                    activeclass="active"
+                    activeclass="router-link-active"
                     event="click"
-                    exactactiveclass="active"
+                    exactactiveclass="router-link-exact-active"
                     href="#"
                     routertag="a"
                     tag="li"
@@ -865,9 +696,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
                   </clistgroupitem-stub>
                    
                   <clistgroupitem-stub
-                    activeclass="active"
+                    activeclass="router-link-active"
                     event="click"
-                    exactactiveclass="active"
+                    exactactiveclass="router-link-exact-active"
                     href="#"
                     routertag="a"
                     tag="li"
@@ -877,9 +708,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
                   </clistgroupitem-stub>
                    
                   <clistgroupitem-stub
-                    activeclass="active"
+                    activeclass="router-link-active"
                     event="click"
-                    exactactiveclass="active"
+                    exactactiveclass="router-link-exact-active"
                     href="#"
                     routertag="a"
                     tag="li"
@@ -915,9 +746,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
                 tag="ul"
               >
                 <clistgroupitem-stub
-                  activeclass="active"
+                  activeclass="router-link-active"
                   event="click"
-                  exactactiveclass="active"
+                  exactactiveclass="router-link-exact-active"
                   href="#"
                   routertag="a"
                   tag="li"
@@ -927,9 +758,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
                 </clistgroupitem-stub>
                  
                 <clistgroupitem-stub
-                  activeclass="active"
+                  activeclass="router-link-active"
                   event="click"
-                  exactactiveclass="active"
+                  exactactiveclass="router-link-exact-active"
                   href="#"
                   routertag="a"
                   tag="li"
@@ -939,9 +770,9 @@ exports[`ListGroups.vue renders correctly 1`] = `
                 </clistgroupitem-stub>
                  
                 <clistgroupitem-stub
-                  activeclass="active"
+                  activeclass="router-link-active"
                   event="click"
-                  exactactiveclass="active"
+                  exactactiveclass="router-link-exact-active"
                   href="#"
                   routertag="a"
                   tag="li"
@@ -993,10 +824,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
           >
             <clistgroupitem-stub
               active="true"
-              activeclass="active"
+              activeclass="router-link-active"
               class="flex-column align-items-start"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -1031,10 +862,10 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               class="flex-column align-items-start"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"
@@ -1073,11 +904,11 @@ exports[`ListGroups.vue renders correctly 1`] = `
             </clistgroupitem-stub>
              
             <clistgroupitem-stub
-              activeclass="active"
+              activeclass="router-link-active"
               class="flex-column align-items-start"
               disabled="true"
               event="click"
-              exactactiveclass="active"
+              exactactiveclass="router-link-exact-active"
               href="#"
               routertag="a"
               tag="li"

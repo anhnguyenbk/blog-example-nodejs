@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import CoreuiVue from '@coreui/vue'
 import Brands from '@/views/icons/Brands'
 
@@ -11,14 +11,10 @@ describe('Brands.vue', () => {
   })
   it('is Vue instance', () => {
     const wrapper = shallowMount(Brands)
-    expect(wrapper.isVueInstance()).toBe(true)
+    expect(wrapper.vm).toBeTruthy()
   })
   it('is Brands', () => {
     const wrapper = shallowMount(Brands)
-    expect(wrapper.is(Brands)).toBe(true)
-  })
-  test('renders correctly', () => {
-    const wrapper = mount(Brands)
-    expect(wrapper.element).toMatchSnapshot()
+    expect(wrapper.findComponent(Brands)).toBeTruthy()
   })
 })

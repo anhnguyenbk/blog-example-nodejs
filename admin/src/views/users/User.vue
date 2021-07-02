@@ -6,17 +6,13 @@
           User id:  {{ $route.params.id }}
         </CCardHeader>
         <CCardBody>
-          <CDataTable 
-            striped 
-            small 
+          <CDataTable
+            striped
+            small
             fixed
-            :items="items" 
+            :items="visibleData"
             :fields="fields"
-          >
-            <template slot="value" slot-scope="data">
-              <strong>{{data.item.value}}</strong>
-            </template>
-          </CDataTable>  
+          />
         </CCardBody>
         <CCardFooter>
           <CButton color="primary" @click="goBack">Back</CButton>
@@ -27,38 +23,43 @@
 </template>
 
 <script>
-import axios from 'axios'
+import usersData from './UsersData'
 export default {
   name: 'User',
-  data: () => {
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.usersOpened = from.fullPath.includes('users')
+    })
+  },
+  data () {
     return {
-      items: [],
-      fields: [
-        {key: 'key'},
-        {key: 'value'},
-      ],
+      usersOpened: null
     }
   },
-  methods: {
-    getUserData (id) {
+  computed: {
+    fields () {
+      return [
+        { key: 'key', label: this.username, _style: 'width:150px'},
+        { key: 'value', label: '', _style: 'width:150px;' }
+      ]
+    },
+    userData () {
+      const id = this.$route.params.id
       const user = usersData.find((user, index) => index + 1 == id)
       const userDetails = user ? Object.entries(user) : [['id', 'Not found']]
       return userDetails.map(([key, value]) => { return { key, value } })
     },
-    goBack() {
-      this.$router.go(-1)
+    visibleData () {
+      return this.userData.filter(param => param.key !== 'username')
+    },
+    username () {
+      return this.userData.filter(param => param.key === 'username')[0].value
     }
   },
-  mounted: function(){
-    let self = this;
-    axios.get(  this.$apiAdress + '/api/users/' + self.$route.params.id + '?token=' + localStorage.getItem("api_token"))
-    .then(function (response) {
-      const items = Object.entries(response.data);
-      self.items = items.map(([key, value]) => {return {key: key, value: value}});
-    }).catch(function (error) {
-      console.log(error);
-      self.$router.push({ path: '/login' });
-    });
+  methods: {
+    goBack() {
+      this.usersOpened ? this.$router.go(-1) : this.$router.push({path: '/users'})
+    }
   }
 }
 </script>

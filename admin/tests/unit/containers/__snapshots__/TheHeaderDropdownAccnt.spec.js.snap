@@ -7,6 +7,7 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   class="c-header-nav-items"
   flip="true"
   innav="true"
+  offset="0,0"
   placement="bottom-end"
   togglertext="Dropdown"
 >
@@ -22,9 +23,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownheader-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -34,11 +35,11 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
      Updates
     
     <cbadge-stub
-      activeclass="active"
-      class="ml-auto"
+      activeclass="router-link-active"
+      class="mfs-auto"
       color="info"
       event="click"
-      exactactiveclass="active"
+      exactactiveclass="router-link-exact-active"
       routertag="a"
       tag="span"
       target="_self"
@@ -48,9 +49,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownitem-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -60,11 +61,11 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
      Messages
     
     <cbadge-stub
-      activeclass="active"
-      class="ml-auto"
+      activeclass="router-link-active"
+      class="mfs-auto"
       color="success"
       event="click"
-      exactactiveclass="active"
+      exactactiveclass="router-link-exact-active"
       routertag="a"
       tag="span"
       target="_self"
@@ -74,9 +75,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownitem-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -86,11 +87,11 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
      Tasks
     
     <cbadge-stub
-      activeclass="active"
-      class="ml-auto"
+      activeclass="router-link-active"
+      class="mfs-auto"
       color="danger"
       event="click"
-      exactactiveclass="active"
+      exactactiveclass="router-link-exact-active"
       routertag="a"
       tag="span"
       target="_self"
@@ -100,9 +101,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownitem-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -112,11 +113,11 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
      Comments
     
     <cbadge-stub
-      activeclass="active"
-      class="ml-auto"
+      activeclass="router-link-active"
+      class="mfs-auto"
       color="warning"
       event="click"
-      exactactiveclass="active"
+      exactactiveclass="router-link-exact-active"
       routertag="a"
       tag="span"
       target="_self"
@@ -136,9 +137,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownheader-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -150,9 +151,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownitem-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -164,9 +165,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownitem-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -176,11 +177,11 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
      Payments
     
     <cbadge-stub
-      activeclass="active"
-      class="ml-auto"
+      activeclass="router-link-active"
+      class="mfs-auto"
       color="secondary"
       event="click"
-      exactactiveclass="active"
+      exactactiveclass="router-link-exact-active"
       routertag="a"
       tag="span"
       target="_self"
@@ -190,9 +191,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownitem-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -202,11 +203,11 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
      Projects
     
     <cbadge-stub
-      activeclass="active"
-      class="ml-auto"
+      activeclass="router-link-active"
+      class="mfs-auto"
       color="primary"
       event="click"
-      exactactiveclass="active"
+      exactactiveclass="router-link-exact-active"
       routertag="a"
       tag="span"
       target="_self"
@@ -220,9 +221,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   />
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >
@@ -234,9 +235,9 @@ exports[`TheHeaderDropdownAccnt.vue renders correctly 1`] = `
   </cdropdownitem-stub>
    
   <cdropdownitem-stub
-    activeclass="active"
+    activeclass="router-link-active"
     event="click"
-    exactactiveclass="active"
+    exactactiveclass="router-link-exact-active"
     routertag="a"
     target="_self"
   >

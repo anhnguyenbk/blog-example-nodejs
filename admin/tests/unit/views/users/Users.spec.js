@@ -21,14 +21,14 @@ describe('Users.vue', () => {
       localVue,
       router
     })
-    expect(wrapper.isVueInstance()).toBe(true)
+    expect(wrapper.vm).toBeTruthy()
   })
   it('is Users', () => {
     const wrapper = shallowMount(Users,{
       localVue,
       router
     })
-    expect(wrapper.is(Users)).toBe(true)
+    expect(wrapper.findComponent(Users)).toBeTruthy()
   })
   test('renders correctly', () => {
     const wrapper = shallowMount(Users, {
@@ -36,16 +36,5 @@ describe('Users.vue', () => {
       router
     })
     expect(wrapper.element).toMatchSnapshot()
-  })
-  it('should have methods', () => {
-    const wrapper = shallowMount(Users,{
-      localVue,
-      router
-    })
-
-    expect(typeof Users.methods.userLink  ).toEqual('function')
-    expect(Users.methods.userLink(42)).toBe('users/42')
-    expect(typeof Users.methods.rowClicked ).toEqual('function')
-    expect(wrapper.vm.rowClicked({id:42})).toBeUndefined()
   })
 })

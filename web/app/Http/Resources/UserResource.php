@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Utils\DateUtils;
 
 class UserResource extends JsonResource
 {
@@ -18,8 +19,9 @@ class UserResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'status' => $this->status,
+            'created_at' => DateUtils::formatDateTime($this->created_at),
+            'updated_at' => DateUtils::formatDateTime($this->updated_at),
         ];
     }
 }

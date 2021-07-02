@@ -20,19 +20,19 @@
     </CDropdownHeader>
     <CDropdownItem>
       <CIcon name="cil-bell"/> Updates
-      <CBadge color="info" class="ml-auto">{{ itemsCount }}</CBadge>
+      <CBadge color="info" class="mfs-auto">{{ itemsCount }}</CBadge>
     </CDropdownItem>
     <CDropdownItem>
       <CIcon name="cil-envelope-open" /> Messages
-      <CBadge color="success" class="ml-auto">{{ itemsCount }}</CBadge>
+      <CBadge color="success" class="mfs-auto">{{ itemsCount }}</CBadge>
     </CDropdownItem>
     <CDropdownItem>
       <CIcon name="cil-task" /> Tasks
-      <CBadge color="danger" class="ml-auto">{{ itemsCount }}</CBadge>
+      <CBadge color="danger" class="mfs-auto">{{ itemsCount }}</CBadge>
     </CDropdownItem>
     <CDropdownItem>
       <CIcon name="cil-comment-square" /> Comments
-      <CBadge color="warning" class="ml-auto">{{ itemsCount }}</CBadge>
+      <CBadge color="warning" class="mfs-auto">{{ itemsCount }}</CBadge>
     </CDropdownItem>
     <CDropdownHeader
       tag="div"
@@ -49,45 +49,33 @@
     </CDropdownItem>
     <CDropdownItem>
       <CIcon name="cil-dollar" /> Payments
-      <CBadge color="secondary" class="ml-auto">{{ itemsCount }}</CBadge>
+      <CBadge color="secondary" class="mfs-auto">{{ itemsCount }}</CBadge>
     </CDropdownItem>
     <CDropdownItem>
       <CIcon name="cil-file" /> Projects
-      <CBadge color="primary" class="ml-auto">{{ itemsCount }}</CBadge>
+      <CBadge color="primary" class="mfs-auto">{{ itemsCount }}</CBadge>
     </CDropdownItem>
     <CDropdownDivider/>
     <CDropdownItem>
       <CIcon name="cil-shield-alt" /> Lock Account
     </CDropdownItem>
-    <CDropdownItem @click="logout()">
+    <CDropdownItem>
       <CIcon name="cil-lock-locked" /> Logout
     </CDropdownItem>
   </CDropdown>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'TheHeaderDropdownAccnt',
   data () {
     return { 
-      itemsCount: 42,
-    }
-  },
-  methods:{
-    logout(){
-      let self = this;
-      axios.post(this.$apiAdress + '/api/logout?token=' + localStorage.getItem("api_token"),{})
-      .then(function (response) {
-        localStorage.setItem('roles', '');
-        self.$router.push({ path: '/login' });
-      }).catch(function (error) {
-        console.log(error); 
-      });
+      itemsCount: 42
     }
   }
 }
 </script>
+
 <style scoped>
   .c-icon {
     margin-right: 0.3rem;

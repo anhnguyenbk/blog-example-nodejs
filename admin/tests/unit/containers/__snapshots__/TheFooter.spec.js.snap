@@ -2,7 +2,6 @@
 
 exports[`TheFooter.vue renders correctly 1`] = `
 <cfooter-stub
-  fixed="true"
   tag="footer"
 >
   <div>
@@ -16,22 +15,22 @@ exports[`TheFooter.vue renders correctly 1`] = `
     <span
       class="ml-1"
     >
-      © 2019 creativeLabs.
+      © 2021 creativeLabs.
     </span>
   </div>
    
   <div
-    class="ml-auto"
+    class="mfs-auto"
   >
     <span
       class="mr-1"
+      target="_blank"
     >
       Powered by
     </span>
      
     <a
       href="https://coreui.io/vue"
-      target="_blank"
     >
       CoreUI for Vue
     </a>

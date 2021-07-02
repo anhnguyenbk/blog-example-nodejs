@@ -13,9 +13,23 @@
     <CHeaderBrand class="mx-auto d-lg-none" to="/">
       <CIcon name="logo" height="48" alt="Logo"/>
     </CHeaderBrand>
-
-    <CMenu/>
-
+    <CHeaderNav class="d-md-down-none mr-auto">
+      <CHeaderNavItem class="px-3">
+        <CHeaderNavLink to="/dashboard">
+          Dashboard
+        </CHeaderNavLink>
+      </CHeaderNavItem>
+      <CHeaderNavItem class="px-3">
+        <CHeaderNavLink to="/users" exact>
+          Users
+        </CHeaderNavLink>
+      </CHeaderNavItem>
+      <CHeaderNavItem class="px-3">
+        <CHeaderNavLink>
+          Settings
+        </CHeaderNavLink>
+      </CHeaderNavItem>
+    </CHeaderNav>
     <CHeaderNav class="mr-4">
       <CHeaderNavItem class="d-md-down-none mx-2">
         <CHeaderNavLink>
@@ -41,14 +55,12 @@
 </template>
 
 <script>
-import CMenu from './Menu'
 import TheHeaderDropdownAccnt from './TheHeaderDropdownAccnt'
 
 export default {
   name: 'TheHeader',
   components: {
-    TheHeaderDropdownAccnt,
-    CMenu
+    TheHeaderDropdownAccnt
   }
 }
 </script>

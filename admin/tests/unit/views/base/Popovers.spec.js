@@ -14,10 +14,21 @@ describe('Popovers.vue', () => {
   })
   it('is Vue instance', () => {
     const wrapper = shallowMount(Popovers)
-    expect(wrapper.isVueInstance()).toBe(true)
+    expect(wrapper.vm).toBeTruthy()
   })
   it('is Popovers', () => {
     const wrapper = shallowMount(Popovers)
-    expect(wrapper.is(Popovers)).toBe(true)
+    expect(wrapper.findComponent(Popovers)).toBeTruthy()
   })
 })
+
+if (global.document) {
+  document.createRange = () => ({
+    setStart: () => {},
+    setEnd: () => {},
+    commonAncestorContainer: {
+      nodeName: 'BODY',
+      ownerDocument: document,
+    },
+  });
+}

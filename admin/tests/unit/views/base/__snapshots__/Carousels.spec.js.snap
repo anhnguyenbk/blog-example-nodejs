@@ -15,12 +15,10 @@ exports[`Carousels.vue renders correctly 1`] = `
       >
         <svg
           class="c-icon"
+          role="img"
           viewBox="0 0 64 64"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>
-            cilJustifyCenter
-          </title>
           undefined
         </svg>
          
@@ -51,33 +49,20 @@ exports[`Carousels.vue renders correctly 1`] = `
       >
         <div
           class="carousel slide"
-          data-v-9c4fbe64=""
+          data-v-10009e0d=""
           style="height: 400px;"
         >
           <ol
             class="carousel-indicators"
-            data-v-9c4fbe64=""
-          >
-            <li
-              class="active"
-              data-v-9c4fbe64=""
-            />
-            <li
-              class=""
-              data-v-9c4fbe64=""
-            />
-            <li
-              class=""
-              data-v-9c4fbe64=""
-            />
-          </ol>
+            data-v-10009e0d=""
+          />
           <div
             class="carousel-inner"
-            data-v-9c4fbe64=""
+            data-v-10009e0d=""
           >
             <div
-              class="carousel-item active"
-              data-v-9c4fbe64=""
+              class="carousel-item"
+              data-v-10009e0d=""
             >
               <img
                 class="d-block w-100 h-100 img-fluid"
@@ -97,7 +82,7 @@ exports[`Carousels.vue renders correctly 1`] = `
              
             <div
               class="carousel-item"
-              data-v-9c4fbe64=""
+              data-v-10009e0d=""
             >
               <svg
                 class="d-block w-100 h-100 img-fluid"
@@ -117,7 +102,7 @@ exports[`Carousels.vue renders correctly 1`] = `
              
             <div
               class="carousel-item"
-              data-v-9c4fbe64=""
+              data-v-10009e0d=""
             >
               <img
                 class="d-block w-100 h-100 img-fluid"
@@ -128,22 +113,22 @@ exports[`Carousels.vue renders correctly 1`] = `
           </div>
           <a
             class="carousel-control-prev"
-            data-v-9c4fbe64=""
+            data-v-10009e0d=""
           >
             <span
               aria-label="Previous"
               class="carousel-control-prev-icon"
-              data-v-9c4fbe64=""
+              data-v-10009e0d=""
             />
           </a>
           <a
             class="carousel-control-next"
-            data-v-9c4fbe64=""
+            data-v-10009e0d=""
           >
             <span
               aria-label="Next"
               class="carousel-control-next-icon"
-              data-v-9c4fbe64=""
+              data-v-10009e0d=""
             />
           </a>
         </div>

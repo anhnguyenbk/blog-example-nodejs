@@ -10,21 +10,20 @@ exports[`Users.vue renders correctly 1`] = `
     tag="div"
     xl="8"
   >
-    <ccard-stub
-      name="slide"
-    >
+    <ccard-stub>
       <ccardheader-stub>
         
-          Users
-        
+        Users
+      
       </ccardheader-stub>
        
       <ccardbody-stub>
         <cdatatable-stub
+          activepage="1"
           clickablerows="true"
           fields="[object Object],[object Object],[object Object],[object Object]"
+          header="true"
           hover="true"
-          index-column=""
           items="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
           itemsperpage="5"
           pagination="[object Object]"

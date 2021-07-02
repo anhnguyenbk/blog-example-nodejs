@@ -1,137 +1,89 @@
 <template>
   <CRow>
-    <CCol col="12" xl="8">
-      <transition name="slide">
+    <CCol col="12" xl="12">
       <CCard>
         <CCardHeader>
-            Users
+          Users
         </CCardHeader>
         <CCardBody>
-          <CAlert
-            :show.sync="dismissCountDown"
-            color="primary"
-            fade
-          >
-            ({{dismissCountDown}}) {{ message }}
-          </CAlert>
           <CDataTable
             hover
             striped
+            table-filter
             :items="items"
             :fields="fields"
-            :items-per-page="5"
-            pagination
+            items-per-page-select
+            :items-per-page="10"
+            clickable-rows
+            :active-page="activePage"
+            @row-clicked="rowClicked"
+            :pagination="{ doubleArrows: false, align: 'center'}"
+            @page-change="pageChange"
           >
-          <template #status="{item}">
-            <td>
-              <CBadge :color="getBadge(item.status)">{{ item.status }}</CBadge>
-            </td>
-          </template>
-          <template #show="{item}">
-            <td>
-              <CButton color="primary" @click="showUser( item.id )">Show</CButton>
-            </td>
-          </template>
-          <template #edit="{item}">
-            <td>
-              <CButton color="primary" @click="editUser( item.id )">Edit</CButton>
-            </td>
-          </template>
-          <template #delete="{item}">
-            <td>
-              <CButton v-if="you!=item.id" color="danger" @click="deleteUser( item.id )">Delete</CButton>
-            </td>
-          </template>
-        </CDataTable>
+            <template #status="data">
+              <td>
+                <CBadge :color="getBadge(data.item.status)">
+                  {{data.item.status}}
+                </CBadge>
+              </td>
+            </template>
+          </CDataTable>
         </CCardBody>
       </CCard>
-      </transition>
     </CCol>
   </CRow>
 </template>
 
 <script>
-import axios from 'axios'
+// import usersData from './UsersData'
+import sunnyApiClient from '../../integrations/SunnyApiClient';
 
 export default {
   name: 'Users',
-  data: () => {
+  data () {
     return {
       items: [],
-      fields: ['id', 'name', 'registered', 'roles', 'status', 'show', 'edit', 'delete'],
-      currentPage: 1,
-      perPage: 5,
-      totalRows: 0,
-      you: null,
-      message: '',
-      showMessage: false,
-      dismissSecs: 7,
-      dismissCountDown: 0,
-      showDismissibleAlert: false
+      fields: [
+        { key: 'name', label: 'Name', _classes: 'font-weight-bold' },
+        // { key: 'registered' },
+        { key: 'email' },
+        { key: 'status' },
+        { key: 'created_at' }
+      ],
+      activePage: 1
     }
   },
-  paginationProps: {
-    align: 'center',
-    doubleArrows: false,
-    previousButtonHtml: 'prev',
-    nextButtonHtml: 'next'
+  watch: {
+    $route: {
+      immediate: true,
+      handler (route) {
+        if (route.query && route.query.page) {
+          this.activePage = Number(route.query.page)
+        }
+      }
+    }
   },
   methods: {
     getBadge (status) {
-      return status === 'Active' ? 'success'
-        : status === 'Inactive' ? 'secondary'
-          : status === 'Pending' ? 'warning'
-            : status === 'Banned' ? 'danger' : 'primary'
+      switch (status) {
+        case 'Active': return 'success'
+        case 'Inactive': return 'secondary'
+        case 'Pending': return 'warning'
+        case 'Banned': return 'danger'
+        default: 'primary'
+      }
     },
-    userLink (id) {
-      return `users/${id.toString()}`
+    rowClicked (item, index) {
+      this.$router.push({path: `users/${index + 1}`})
     },
-    editLink (id) {
-      return `users/${id.toString()}/edit`
-    },
-    showUser ( id ) {
-      const userLink = this.userLink( id );
-      this.$router.push({path: userLink});
-    },
-    editUser ( id ) {
-      const editLink = this.editLink( id );
-      this.$router.push({path: editLink});
-    },
-    deleteUser ( id ) {
-      let self = this;
-      let userId = id;
-      axios.post(  this.$apiAdress + '/api/users/' + id + '?token=' + localStorage.getItem("api_token"), {
-        _method: 'DELETE'
-      })
-      .then(function (response) {
-          self.message = 'Successfully deleted user.';
-          self.showAlert();
-          self.getUsers();
-      }).catch(function (error) {
-        console.log(error);
-        self.$router.push({ path: '/login' });
-      });
-    },
-    countDownChanged (dismissCountDown) {
-      this.dismissCountDown = dismissCountDown
-    },
-    showAlert () {
-      this.dismissCountDown = this.dismissSecs
-    },
-    getUsers (){
-      let self = this;
-      axios.get(  this.$apiAdress + '/api/users?token=' + localStorage.getItem("api_token"))
-      .then(function (response) {
-        self.items = response.data.users;
-        self.you = response.data.you;
-      }).catch(function (error) {
-        console.log(error);
-        self.$router.push({ path: '/login' });
-      });
+    pageChange (val) {
+      this.$router.push({ query: { page: val }})
     }
   },
-  mounted: function(){
-    this.getUsers();
-  }
+  async mounted () {
+    const { data: users } = await sunnyApiClient.get('users');
+    console.log (users)
+    this.items = users
+  },
 }
 </script>

@@ -6,5 +6,9 @@ module.exports = {
     resolve: {
        symlinks: false
     }
-  }
+  },
+  transpileDependencies: [
+    '@coreui/utils',
+    '@coreui/vue'
+  ]
 }

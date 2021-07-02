@@ -6,8 +6,8 @@ exports[`TheContainer.vue renders correctly 1`] = `
 >
   <thesidebar-stub />
    
-  <div
-    class="c-wrapper"
+  <cwrapper-stub
+    tag="div"
   >
     <theheader-stub />
      
@@ -21,14 +21,19 @@ exports[`TheContainer.vue renders correctly 1`] = `
           fluid="true"
           tag="div"
         >
-          <router-view-stub
+          <transition-stub
+            mode="out-in"
             name="fade"
-          />
+          >
+            <router-view-stub
+              name="default"
+            />
+          </transition-stub>
         </ccontainer-stub>
       </main>
     </div>
      
     <thefooter-stub />
-  </div>
+  </cwrapper-stub>
 </div>
 `;

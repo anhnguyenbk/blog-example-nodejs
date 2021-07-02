@@ -6,13 +6,13 @@
       <div class="c-body">
         <main class="c-main">
           <CContainer fluid>
-            <transition name="fade">
-              <router-view></router-view>
+            <transition name="fade" mode="out-in">
+              <router-view :key="$route.path"></router-view>
             </transition>
           </CContainer>
         </main>
-        <TheFooter/>
       </div>
+      <TheFooter/>
     </CWrapper>
   </div>
 </template>
