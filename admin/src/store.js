@@ -1,10 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import StringUtils from './utils/StringUtils'
 Vue.use(Vuex)
+
+const ToastType = {
+  Error: 1,
+  SuccessfullySaved: 2
+};
 
 const state = {
   sidebarShow: 'responsive',
-  sidebarMinimize: false
+  sidebarMinimize: false,
+  showErrorToast: false,
+  fixedToasts: []
 }
 
 const mutations = {
@@ -16,6 +24,24 @@ const mutations = {
     const sidebarClosed = [false, 'responsive'].includes(state.sidebarShow)
     state.sidebarShow = sidebarClosed ? true : 'responsive'
   },
+  showToast (state, type) {
+    var toastId = StringUtils.random(6);
+    if (type === ToastType.Error) {
+      state.fixedToasts.push({
+        id: toastId, 
+        header: 'Error', 
+        color: 'danger',
+        content: 'An unexpected error has occurred. Please try again.'
+      })
+    } else if (type === ToastType.SuccessfullySaved) {
+      state.fixedToasts.push({
+        id: toastId, 
+        header: 'Successfully saved', 
+        color: 'success',
+        content: 'The item has been saved successfully.'
+      })
+    }
+  },
   set (state, [variable, value]) {
     state[variable] = value
   }
@@ -23,5 +49,10 @@ const mutations = {
 
 export default new Vuex.Store({
   state,
-  mutations
+  mutations,
+  getters: {
+    ToastType () {
+      return ToastType
+    }
+  }
 })

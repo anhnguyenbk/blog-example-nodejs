@@ -29,58 +29,25 @@ class UserSeeder extends Seeder
             'Pending',
             'Banned'
         );
+
         /* Create roles */
-        // $adminRole = $roleAdmin = Role::create(['name' => 'admin']);
-        // RoleHierarchy::create([
-        //     'role_id' => $adminRole->id,
-        //     'hierarchy' => 1,
-        // ]);
-        // $userRole = Role::create(['name' => 'user']);
-        // RoleHierarchy::create([
-        //     'role_id' => $userRole->id,
-        //     'hierarchy' => 2,
-        // ]);
-        // $guestRole = Role::create(['name' => 'guest']); 
-        // RoleHierarchy::create([
-        //     'role_id' => $guestRole->id,
-        //     'hierarchy' => 3,
-        // ]);
+        $adminRole = $roleAdmin = Role::create(['name' => 'admin']);
+        $userRole = Role::create(['name' => 'user']);
+        $guestRole = Role::create(['name' => 'guest']);
 
         $faker = Faker::create();
-        // /*  insert status  */
-        // DB::table('status')->insert([
-        //     'name' => 'ongoing',
-        //     'class' => 'primary',
-        // ]);
-        // array_push($statusIds, DB::getPdo()->lastInsertId());
-        // DB::table('status')->insert([
-        //     'name' => 'stopped',
-        //     'class' => 'secondary',
-        // ]);
-        // array_push($statusIds, DB::getPdo()->lastInsertId());
-        // DB::table('status')->insert([
-        //     'name' => 'completed',
-        //     'class' => 'success',
-        // ]);
-        // array_push($statusIds, DB::getPdo()->lastInsertId());
-        // DB::table('status')->insert([
-        //     'name' => 'expired',
-        //     'class' => 'warning',
-        // ]);
-        // array_push($statusIds, DB::getPdo()->lastInsertId());
-
         /*  insert users   */
-        $user = User::create([ 
+        $user = User::create([
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            // 'menuroles' => 'user,admin',
             'status' => 'Active'
         ]);
-        // $user->assignRole('user');
-        // $user->assignRole($roleAdmin);
+        $user->assignRole('user');
+        $user->assignRole($roleAdmin);
+
         for($i = 0; $i<$numberOfUsers; $i++){
             $user = User::create([
                 'name' => $faker->name(),
@@ -88,11 +55,9 @@ class UserSeeder extends Seeder
                 'email_verified_at' => now(),
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'remember_token' => Str::random(10),
-                // 'menuroles' => 'user',
                 'status' => $userStatus[ random_int(0,count($userStatus) - 1) ]
             ]);
-            // $user->assignRole('user');
-            // array_push($usersIds, $user->id);
+            $user->assignRole('user');
         }
         // /*  insert notes  */
         // for($i = 0; $i<$numberOfNotes; $i++){

@@ -57,6 +57,9 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+// Posts
+const Posts = () => import('@/views/posts/Posts')
+
 Vue.use(Router)
 
 export default new Router({
@@ -134,6 +137,11 @@ function configRoutes () {
               component: User
             }
           ]
+        },
+        {
+          path: 'posts',
+          name: 'Posts',
+          component: Posts
         },
         {
           path: 'base',

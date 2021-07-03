@@ -27,6 +27,13 @@
                 </CBadge>
               </td>
             </template>
+             <template #roles="data">
+              <td>
+                <CBadge v-for="role in data.item.roles" :key="role" :color="getRoleColor(role)" class="m-1">
+                  {{capitalizeFirstLetter(role)}}
+                </CBadge>
+              </td>
+            </template>
           </CDataTable>
         </CCardBody>
       </CCard>
@@ -35,8 +42,8 @@
 </template>
 
 <script>
-// import usersData from './UsersData'
 import sunnyApiClient from '../../integrations/SunnyApiClient';
+import StringUtils from '../../utils/StringUtils';
 
 export default {
   name: 'Users',
@@ -48,6 +55,7 @@ export default {
         // { key: 'registered' },
         { key: 'email' },
         { key: 'status' },
+        { key: 'roles' },
         { key: 'created_at' }
       ],
       activePage: 1
@@ -73,16 +81,25 @@ export default {
         default: 'primary'
       }
     },
+    getRoleColor (role) {
+      switch (role) {
+        case 'admin': return 'danger'
+        case 'user': return 'success'
+        default: 'primary'
+      }
+    },
     rowClicked (item, index) {
-      this.$router.push({path: `users/${index + 1}`})
+      this.$router.push({path: `users/${item.id}`})
     },
     pageChange (val) {
       this.$router.push({ query: { page: val }})
-    }
+    },
+    capitalizeFirstLetter(str) {
+      return StringUtils.capitalizeFirstLetter(str);
+    },
   },
   async mounted () {
-    const { data: users } = await sunnyApiClient.get('users');
-    console.log (users)
+    const users = await sunnyApiClient.get('users');
     this.items = users
   },
 }

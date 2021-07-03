@@ -13,6 +13,19 @@
         </main>
       </div>
       <TheFooter/>
+
+      <CToaster :autohide="3000">
+        <template v-for="toast in fixedToasts">
+        <CToast
+            :key="'toast' + toast.id"
+            :show="true"
+            :header="toast.header"
+            :color="toast.color"
+        >
+        {{toast.content}}
+        </CToast>
+         </template>
+      </CToaster>
     </CWrapper>
   </div>
 </template>
@@ -28,6 +41,13 @@ export default {
     TheSidebar,
     TheHeader,
     TheFooter
+  },
+  computed: {
+    fixedToasts: {
+      get () {
+        return this.$store.state.fixedToasts
+      }
+    }
   }
 }
 </script>

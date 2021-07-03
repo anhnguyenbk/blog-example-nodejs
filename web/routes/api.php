@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\PostApiController;
+use App\Http\Controllers\Api\UserApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,18 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-use App\Http\Resources\UserResource;
-use App\Http\Resources\UserCollection;
-use App\Models\User;
 
-Route::get('/user/{id}', function ($id) {
-    return new UserResource(User::findOrFail($id));
-});
+// Users
+Route::get('/users', [UserApiController::class, 'list']);
+Route::get('/users/statuses', [UserApiController::class, 'getStatuses']);
+Route::get('/user/{id}', [UserApiController::class, 'get']);
+Route::put('/user/{id}', [UserApiController::class, 'update']);
 
-// Route::get('/users', function () {
-//     return UserResource::collection(User::all());
-// });
-
-Route::get('/users', function () {
-    return new UserCollection(User::all());
-});
+// Posts
+Route::get('/posts', [PostApiController::class, 'list']);
+Route::get('/post/{id}', [PostApiController::class, 'get']);
+Route::delete('/post/{id}', [PostApiController::class, 'delete']);
