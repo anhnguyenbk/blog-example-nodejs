@@ -13,6 +13,10 @@ const sunnyApiClient = {
         return res;
     },
 
+    async post(path, requestBody) {
+        return await axios.post(`${BASE_URL}/${path}`, requestBody);
+    },
+
     async delete(path) {
       var res = await axios.delete(`${BASE_URL}/${path}`)
       return res;

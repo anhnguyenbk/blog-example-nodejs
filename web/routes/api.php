@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CategoryApiController;
 use App\Http\Controllers\Api\PostApiController;
 use App\Http\Controllers\Api\UserApiController;
 use Illuminate\Http\Request;
@@ -30,3 +31,12 @@ Route::put('/user/{id}', [UserApiController::class, 'update']);
 Route::get('/posts', [PostApiController::class, 'list']);
 Route::get('/post/{id}', [PostApiController::class, 'get']);
 Route::delete('/post/{id}', [PostApiController::class, 'delete']);
+
+// Categories
+Route::get('/categories', [CategoryApiController::class, 'list']);
+Route::get('/categories-hierarchy', [CategoryApiController::class, 'listHierarchy']);
+Route::post('/categories', [CategoryApiController::class, 'create']);
+Route::put('/category/{id}', [CategoryApiController::class, 'update']);
+Route::delete('/category/{id}', [CategoryApiController::class, 'delete']);
+Route::post('/categories/order', [CategoryApiController::class, 'order']);
+

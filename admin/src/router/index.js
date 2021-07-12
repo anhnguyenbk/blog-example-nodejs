@@ -17,7 +17,6 @@ const Widgets = () => import('@/views/widgets/Widgets')
 const Cards = () => import('@/views/base/Cards')
 const Forms = () => import('@/views/base/Forms')
 const Switches = () => import('@/views/base/Switches')
-const Tables = () => import('@/views/base/Tables')
 const Tabs = () => import('@/views/base/Tabs')
 const Breadcrumbs = () => import('@/views/base/Breadcrumbs')
 const Carousels = () => import('@/views/base/Carousels')
@@ -59,6 +58,10 @@ const User = () => import('@/views/users/User')
 
 // Posts
 const Posts = () => import('@/views/posts/Posts')
+const Post = () => import('@/views/posts/Post')
+
+// Categories
+const Categories = () => import('@/views/categories/Categories')
 
 Vue.use(Router)
 
@@ -140,8 +143,55 @@ function configRoutes () {
         },
         {
           path: 'posts',
-          name: 'Posts',
-          component: Posts
+          meta: {
+            label: 'Posts'
+          },
+          component: {
+            render(c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: '',
+              name: 'Posts',
+              component: Posts
+            },
+            {
+              path: ':id',
+              meta: {
+                label: 'Post Details'
+              },
+              name: 'Post',
+              component: Post
+            }
+          ]
+        },
+        {
+          path: 'categories',
+          meta: {
+            label: 'Categories'
+          },
+          component: {
+            render(c) {
+              return c('router-view')
+            }
+          },
+          children: [
+            {
+              path: '',
+              name: 'Categories',
+              component: Categories
+            },
+            // {
+            //   path: ':id',
+            //   meta: {
+            //     label: 'Post Details'
+            //   },
+            //   name: 'Post',
+            //   component: Post
+            // }
+          ]
         },
         {
           path: 'base',
@@ -165,11 +215,6 @@ function configRoutes () {
               path: 'switches',
               name: 'Switches',
               component: Switches
-            },
-            {
-              path: 'tables',
-              name: 'Tables',
-              component: Tables
             },
             {
               path: 'tabs',

@@ -19,10 +19,7 @@ class PostApiController extends Controller
     }
 
     public function delete(Request $request, $id) {
-        //Post::where('id', '=', $id)->delete();
-        //return response()->noContent();
-        return response()->toJson([
-            'message' => 'Record not found',
-        ], 404);
+        Post::where('id', '=', $id)->delete();
+        return response()->noContent();
     }
 }

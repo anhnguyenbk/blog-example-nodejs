@@ -32,6 +32,7 @@ import {
   cifPl
 } from '@coreui/icons'
 import {
+  cibAddthis,
   cilArrowRight,
   cilBan,
   cilBasket,
@@ -61,8 +62,10 @@ import {
   cilList,
   cilLocationPin,
   cilLockLocked,
+  cilLockUnlocked,
   cilMagnifyingGlass,
   cilMoon,
+  cilNoteAdd,
   cilOptions,
   cilPencil,
   cilPeople,
@@ -86,6 +89,7 @@ export const iconsSet = Object.assign(
   {},
   { logo },
   {
+    cibAddthis,
     cilArrowRight,
     cilBan,
     cilBasket,
@@ -115,8 +119,10 @@ export const iconsSet = Object.assign(
     cilList,
     cilLocationPin,
     cilLockLocked,
+    cilLockUnlocked,
     cilMagnifyingGlass,
     cilMoon,
+    cilNoteAdd,
     cilOptions,
     cilPencil,
     cilPeople,

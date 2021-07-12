@@ -6,14 +6,14 @@
           User id: {{ $route.params.id }}
         </CCardHeader>
         <CCardBody>
-          <InlineInput label="Name" :value="details.name" readonly="true" />
-          <InlineInput label="Email" :value="details.email" readonly="true" />
+          <TextInput label="Name" :value="details.name" readonly="true" />
+          <TextInput label="Email" :value="details.email" readonly="true" />
           <CRow>
             <CCol sm="12">
               <CSelect label="Status" :options="statuses" :value.sync="details.status" horizontal />
             </CCol>
           </CRow>
-          <InlineInput label="Created at" :value="details.created_at" readonly="true" />
+          <TextInput label="Created at" :value="details.created_at" readonly="true" />
         </CCardBody>
         <CCardFooter>
           <div class="card-footer-action-buttons float-right">
@@ -29,8 +29,7 @@
 <script>
   import store from '../../store';
   import sunnyApiClient from '../../integrations/SunnyApiClient';
-  import SuccessToast from '../../components/notification/SuccessToast.vue';
-  import InlineInput from "../../components/form/InlineInput.vue";
+  import TextInput from "../../components/form/TextInput.vue";
   import InlineSelect from "../../components/form/InlineSelect.vue";
 
   export default {
@@ -41,8 +40,7 @@
       })
     },
     components: {
-      SuccessToast,
-      InlineInput,
+      TextInput,
       InlineSelect
     },
     data() {

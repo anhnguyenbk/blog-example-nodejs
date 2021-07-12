@@ -2,13 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\RoleHierarchy;
+use App\Models\User;
 use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
-use App\Models\User;
-use App\Models\RoleHierarchy;
 
 class UserSeeder extends Seeder
 {
@@ -20,9 +19,6 @@ class UserSeeder extends Seeder
     public function run()
     {
         $numberOfUsers = 100;
-        // $numberOfNotes = 100;
-        $usersIds = array();
-        // $statusIds = array();
         $userStatus = array(
             'Active',
             'Inactive',
@@ -59,20 +55,5 @@ class UserSeeder extends Seeder
             ]);
             $user->assignRole('user');
         }
-        // /*  insert notes  */
-        // for($i = 0; $i<$numberOfNotes; $i++){
-        //     $noteType = $faker->word();
-        //     if(random_int(0,1)){
-        //         $noteType .= ' ' . $faker->word();
-        //     }
-        //     DB::table('notes')->insert([
-        //         'title'         => $faker->sentence(4,true),
-        //         'content'       => $faker->paragraph(3,true),
-        //         'status_id'     => $statusIds[random_int(0,count($statusIds) - 1)],
-        //         'note_type'     => $noteType,
-        //         'applies_to_date' => $faker->date(),
-        //         'users_id'      => $usersIds[random_int(0,$numberOfUsers-1)]
-        //     ]);
-        // }
     }
 }
